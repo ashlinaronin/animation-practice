@@ -11,13 +11,23 @@
     <div id="goodbye">
       goodbye cruel world
     </div>
+    <button type="button" id="hello-btn">Hello</button>
+    <button type="button" id="goodbye-btn">Goodbye</button>
+
     <!-- don't need all this functionality for now but easier to include one file during dev -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <!-- add animation code here -->
     <script type="text/javascript">
-      new TweenLite("#hello", 1.5, {backgroundColor: "green", color: "white", ease:Power2.easeInOut});
+      var helloTween = new TweenLite.to("#hello", 1.5, {backgroundColor: "green", color: "white", ease:Power2.easeInOut, paused: true});
 
-      new TweenLite("#goodbye", 2.0, {backgroundColor: "black", color: "white", ease:Power3.easeInOut});
+      var goodbyeTween = new TweenLite.to("#goodbye", 2.0, {backgroundColor: "black", color: "white", ease:Power3.easeInOut, paused: true});
+
+      document.getElementById('hello-btn').onclick = function() {
+        helloTween.resume();
+      }
+      document.getElementById('goodbye-btn').onclick = function() {
+        goodbyeTween.resume();
+      }
     </script>
   </body>
 </html>
