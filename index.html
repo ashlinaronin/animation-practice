@@ -49,16 +49,14 @@
         goodbyeTween.resume();
       }
 
-      var sqt = new TimelineMax({repeat:-1, yoyo:true});
+      var sqTimeline = new TimelineMax({repeat:-1, yoyo:true});
+      var colors = ["red", "green", "blue", "yellow"];
+      var duration = 1;
+      var easing = Power3.easeInOut;
 
-      sqt.to('#square', 1, {borderColor:"red", ease:Power3.easeInOut});
-
-      sqt.to('#square', 1, {borderColor:"green", ease:Power3.easeInOut});
-
-      sqt.to('#square', 1, {borderColor:"blue", ease:Power3.easeInOut});
-
-      sqt.to('#square', 1, {borderColor:"yellow", ease:Power3.easeInOut});
-
+      colors.forEach(function(color) {
+        sqTimeline.to('#square', duration, {borderColor: color, ease: easing});
+      });
 
 
 
