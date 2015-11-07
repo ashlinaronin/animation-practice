@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" charset="utf-8">
     <title></title>
   </head>
   <body>
@@ -11,8 +12,14 @@
     <div id="goodbye">
       goodbye cruel world
     </div>
+
+    <div id="square">
+      square
+    </div>
     <button type="button" id="hello-btn">Hello</button>
     <button type="button" id="goodbye-btn">Goodbye</button>
+    <button type="button" id="slow-goodbye-btn">Slow Goodbye</button>
+
 
     <!-- don't need all this functionality for now but easier to include one file during dev -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
@@ -22,12 +29,26 @@
 
       var goodbyeTween = new TweenLite.to("#goodbye", 2.0, {backgroundColor: "black", color: "white", ease:Power3.easeInOut, paused: true});
 
+      var alerty = function() {
+        alert("this is an alert");
+      }
+
       document.getElementById('hello-btn').onclick = function() {
         helloTween.resume();
       }
       document.getElementById('goodbye-btn').onclick = function() {
         goodbyeTween.resume();
       }
+      document.getElementById('slow-goodbye-btn').onclick = function() {
+        // update delay param of goodbye tween before resuming
+        // turns out updating delay param doesn't work here
+        goodbyeTween.vars.delay = 10;
+        goodbyeTween.vars.onComplete = alerty;
+        console.dir(goodbyeTween.vars);
+        goodbyeTween.resume();
+      }
+
+
     </script>
   </body>
 </html>
