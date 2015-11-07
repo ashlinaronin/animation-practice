@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="hello">
+      hello world
+    </div>
+    <div id="goodbye">
+      goodbye cruel world
+    </div>
+    <!-- don't need all this functionality for now but easier to include one file during dev -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <!-- add animation code here -->
+    <script type="text/javascript">
+      new TweenLite("#hello", 1.5, {backgroundColor: "green", color: "white", ease:Power2.easeInOut});
+
+      new TweenLite("#goodbye", 2.0, {backgroundColor: "black", color: "white", ease:Power3.easeInOut});
+    </script>
+  </body>
+</html>
