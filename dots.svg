@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<!-- these days, you need the xmlns and xmlns:xlink! 2nd edition wassup -->
+<svg width="200px" height="200px" viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Dots</title>
+  <desc>Some friggin Dots</desc>
+
+  <!-- define objects, filters, etc we are going to use in this svg -->
+  <defs>
+    <g id="dot">
+      <circle cx="20" cy="20" r="2" style="fill: black; stroke: none;"/>
+    </g>
+
+
+  </defs>
+
+<use xlink:href="#dot"  />
+<use xlink:href="#dot" transform="translate(20 0)" />
+
+<use xlink:href="#dot" transform="translate(0 20)" />
+<use xlink:href="#dot" transform="translate(20 20)" />
+
+<use xlink:href="#dot" transform="translate(0 40)" />
+<use xlink:href="#dot" transform="translate(20 40)" />
+
+
+
+</svg>

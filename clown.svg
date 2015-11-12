@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<!-- these days, you need the xmlns and xmlns:xlink! 2nd edition wassup -->
+<svg width="200px" height="200px" viewBox="0 0 400 400"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Clown</title>
+  <desc>A creepy clown</desc>
+
+  <!-- define objects, filters, etc we are going to use in this svg -->
+  <defs>
+
+    <g id="eyebrow">
+      <path d="M 0 0 c 20 -15, 50 -15, 100 0"
+        style="stroke-width: 8px; stroke: black; fill: none;" />
+    </g>
+
+
+    <g id="eye">
+      <!-- using an ellipse and a few circles to create the impression
+      of an eye. -->
+      <ellipse cx="0" cy="0" rx="50" ry="20" style="fill: white; stroke: none;" />
+      <circle cx="10" cy="0" r="15" style="fill: green; stroke: none;" />
+      <circle cx="10" cy="0" r="10" />
+    </g>
+
+    <g id="nose">
+      <!-- Using cubic bezier curves to draw the nose.
+      All relative points from the origin, so we can translate
+      this whole graphic to wherever we want.
+      Using a few circles for nostril holes.
+     -->
+      <path d="M 0 0 c 150 100, 100 150, 50 100
+              c 0 5, 5 50, -50 0
+              c 50 50, -125 50, 0 -100 z"
+        style="fill: red; stroke: none;"/>
+        <circle cx="10" cy="120" r="12"
+          style="fill: grey; stroke: none;"/>
+        <circle cx="50" cy="110" r="12"
+          style="fill: grey; stroke: none;"/>
+    </g>
+
+
+  </defs>
+
+<!-- eyes-->
+<use xlink:href="#eye" transform="translate(140, 40)"  />
+<use xlink:href="#eye" transform="translate(260, 40) rotate(180)" />
+
+<use xlink:href="#eyebrow" transform="translate(85, 20)" />
+
+
+<use xlink:href="#nose" transform="translate(200, 100) scale(0.5)"/>
+
+
+</svg>
