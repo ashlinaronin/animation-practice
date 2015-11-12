@@ -42,17 +42,25 @@
           style="fill: grey; stroke: none;"/>
     </g>
 
+    <g id="face">
+      <ellipse cx="0" cy="0" rx="125" ry="170"
+        style="fill: #fc9;"/>
+    </g>
+
 
   </defs>
 
+<use xlink:href="#face" transform="translate(195, 215)"/>
+
 <!-- eyes-->
-<use xlink:href="#eye" transform="translate(140, 40)"  />
-<use xlink:href="#eye" transform="translate(260, 40) rotate(180)" />
+<use xlink:href="#eye" transform="translate(140, 185) skewX(25)"  />
+<use xlink:href="#eye" transform="translate(260, 185) scale(-1, -1) skewX(-15)" />
 
-<use xlink:href="#eyebrow" transform="translate(85, 20)" />
+<!-- using scale as a mirror function by scaling by -1 -->
+<use xlink:href="#eyebrow" transform="translate(85, 160)" />
+<use xlink:href="#eyebrow" transform="translate(310, 160) scale(-1, 1)" />
 
-
-<use xlink:href="#nose" transform="translate(200, 100) scale(0.5)"/>
+<use xlink:href="#nose" transform="translate(200, 210) scale(0.5)"/>
 
 
 </svg>
